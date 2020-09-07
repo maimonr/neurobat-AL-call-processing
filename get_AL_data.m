@@ -5,8 +5,7 @@ pnames = {'sessionType', 'boxNum'};
 dflts  = {'communication', NaN};
 [sessionType,boxNum] = internal.stats.parseArgs(pnames,dflts,varargin{:});
 
-remote_drive_letter = get_server_letter;
-remote_base_dir = fullfile(remote_drive_letter,'users\maimon');
+[~, remote_base_dir] = get_server_directory;
 
 switch expType
     case 'acousticRecording'
